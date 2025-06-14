@@ -40,6 +40,7 @@ else if (typeof document === 'undefined' && typeof self !== 'undefined') {
 else if (
     !env.hasGlobalWindow
     || 'Deno' in window
+    || (typeof globalThis !== 'undefined' && 'Bun' in globalThis)
     || (typeof navigator !== 'undefined' && typeof navigator.userAgent === 'string'
         && navigator.userAgent.indexOf('Node.js') > -1)
 ) {
